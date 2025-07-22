@@ -1,6 +1,6 @@
 ﻿services:
   bake:
-    image: maksiorek9/test
+    image: maksiorek9/test:latest
     container_name: progect
     build:
       context: .
