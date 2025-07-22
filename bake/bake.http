@@ -1,0 +1,6 @@
+@bake_HostAddress = http://localhost:5212
+
+GET {{bake_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
