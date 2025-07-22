@@ -1,6 +1,6 @@
 ﻿services:
   bake:
-    image: bake
+    image: maksiorek9/test
     container_name: progect
     build:
       context: .
@@ -23,8 +23,4 @@
       retries: 10
     ports:
       - "5432:5432"
-  bake-1:
-    image: bake-1
-    build:
-      context: .
-      dockerfile: bake/Dockerfile
+  
