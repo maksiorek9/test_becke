@@ -1,0 +1,95 @@
+﻿@page "/app"
+@using System.ComponentModel.DataAnnotations
+@using backe.models.identiti
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IHttpClientFactory ClientFactory
+
+<div>
+    <p>
+        Имя:<br />
+        <input @bind-value="reg.Name" />
+    </p>
+    <p>
+        Имя:<br />
+        <input @bind-value="reg.Email" />
+    </p>
+    <p>
+        Пароль:<br />
+        <input @bind-value="reg.Pasword" />
+    </p>
+    <p>
+        <button @onclick="Submit">Сохранить</button>
+    </p>
+</div>
+
+<div>
+    
+    <p>
+        Имя:<br />
+        <input @bind-value="Log.Email" />
+    </p>
+    <p>
+        Пароль:<br />
+        <input @bind-value="Log.Pasword" />
+    </p>
+    <p>
+        <button @onclick="Chek">войти</button>
+    </p>
+    
+</div>
+<div>
+    <p>
+        <button @onclick="Val">проверка</button>
+        
+    </p>
+</div>
+<h1>@Inf</h1>
+@code {
+    HttpResponseMessage inf;
+    string Inf;
+    RegPerson reg = new RegPerson();
+    
+    HttpClient httpClientReg = null!;
+    HttpClient httpClientLog = null!;
+    
+    RegPerson Log = new RegPerson();
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        httpClientReg = ClientFactory.CreateClient();
+        
+        httpClientReg.BaseAddress = new Uri("http://localhost:5212");
+        
+    }
+
+
+    
+
+     async Task Submit()
+    {
+        await httpClientReg.PostAsJsonAsync($"/AutheControlers/Registr", reg);
+      
+       
+    }
+
+    async Task Chek()
+    {
+        await httpClientReg.PostAsJsonAsync($"http://localhost:5212/AutheControlers/Login", Log );
+    }
+    
+    async Task Val()
+    {
+        var inf = await httpClientReg.GetAsync($"/Good_wordControler");
+        if (inf.IsSuccessStatusCode)
+        {
+            Inf = "good";
+        }
+        else
+        {
+            Inf = "bad";
+        }
+    }
+    
+}

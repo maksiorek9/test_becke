@@ -1,3 +1,8 @@
 ﻿namespace backe.models.identiti;
 
-public record RegPerson( string Name, string Email, string Pasword);
+public class RegPerson
+{
+    public string Name { get; set; } = "-1";
+    public string Email { get; set; }
+    public string Pasword { get; set; }
+}

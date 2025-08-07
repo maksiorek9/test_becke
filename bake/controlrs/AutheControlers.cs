@@ -13,13 +13,13 @@ public class AutheControlers(AuthModel authModel): ControllerBase
     public IActionResult reg([FromBody] RegPerson person)
     {
         authModel.regist(person);
-        return NoContent();
+        return Ok("ww");
     }
     
     [HttpPost("Login")]
-    public IActionResult Log(string email, string pasword)
+    public IActionResult Log([FromBody] RegPerson person)
     {
-        var toke = authModel.login(email, pasword);
+        var toke = authModel.login(person.Email, person.Pasword);
         HttpContext.Response.Cookies.Append("berr",toke);
         return Ok(toke);
     }
