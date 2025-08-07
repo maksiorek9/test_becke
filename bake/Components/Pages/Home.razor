@@ -60,7 +60,7 @@
     {
         httpClientReg = ClientFactory.CreateClient();
         
-        httpClientReg.BaseAddress = new Uri("http://localhost:5212");
+        httpClientReg.BaseAddress = new Uri("http://localhost:8080");
         
     }
 
@@ -76,7 +76,7 @@
 
     async Task Chek()
     {
-        await httpClientReg.PostAsJsonAsync($"http://localhost:5212/AutheControlers/Login", Log );
+        await httpClientReg.PostAsJsonAsync($"/AutheControlers/Login", Log );
     }
     
     async Task Val()
