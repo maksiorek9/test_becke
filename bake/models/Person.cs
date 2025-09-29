@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using backe.models.Repositori;
 
-namespace backe.models;
+namespace bake.models;
 
-public class Person
+public class Person:Rperson
 {
     [Required]
     public Guid Id { get; set; }
@@ -10,7 +11,10 @@ public class Person
     public string Name { get; set; }
     [Required]
     public string Email { get; set; }
+
+    
+
     [Required]
-    public string PasswordSh { get; set; }
+    public string Password { get; set; }
     
 }

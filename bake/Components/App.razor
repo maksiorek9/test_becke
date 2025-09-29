@@ -1,17 +1,33 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@using bake.Components.Layout
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>METANIT.COM</title>
+    <title>Cookie</title>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="app.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Passion+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+   
+    
+    <link href="_content/MudBlazor/MudBlazor.min.css?v=@(MudBlazor.Metadata.Version)" rel="stylesheet"/>
+
+
+    <HeadOutlet/>
 </head>
+
 <body>
 
-<h1>Регистрация</h1>
-<Router AppAssembly="@typeof(Program).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData"  />
-    </Found>
-</Router>
+<Routes/>
+<script src="_content/MudBlazor/MudBlazor.min.js?v=@(MudBlazor.Metadata.Version)"></script>
 
 <script src="_framework/blazor.web.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,154 @@
+﻿@inherits LayoutComponentBase
+
+
+<MudThemeProvider Theme="MyCustomTheme" />
+@* Required *@
+
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
+
+
+    
+    
+<MudPaper Square="true" >
+    
+    
+        
+  
+        
+        
+    <Drawer/>
+    
+   
+    
+        <MudIconButton Icon="@Icons.Material.Rounded.Person"         Size="Size.Large" Edge="Edge.End" Style="margin-right: auto;  " Href="/login"></MudIconButton>
+
+    
+        
+        
+    <MainButton/>
+   
+   
+</MudPaper>
+    
+
+        
+    @Body
+   
+
+
+
+
+
+@code{
+    private bool _open;
+    private Anchor _anchor;
+    private bool _overlayAutoClose = true;
+
+    void Navi()
+    {
+        Navigation.NavigateTo(BaseUrl.base_url+"/Home");
+        _overlayAutoClose = false;
+    }
+
+    public void OpenDrawer(Anchor anchor)
+    {
+        _open = true;
+        _anchor = anchor;
+    }
+
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    private bool isFormVisible = false;
+
+    private FormModel formModel = new FormModel();
+
+    private void ShowForm()
+    {
+        isFormVisible = true;
+    }
+
+    private void HideForm()
+    {
+        isFormVisible = false;
+    }
+
+    private void HandleValidSubmit()
+    {
+        // Логика обработки отправки формы
+        Console.WriteLine($"Имя: {formModel.Name}, Сообщение: {formModel.Message}");
+        isFormVisible = false; // Скрыть форму после отправки
+    }
+
+    public class FormModel
+    {
+        public string Name { get; set; }
+        public string Message { get; set; }
+    }
+
+
+    MudTheme MyCustomTheme = new MudTheme()
+    {
+
+        PaletteLight = new PaletteLight()
+        {
+            Primary = "#efe1c6",
+            Secondary = "#6494ce",
+            AppbarBackground = MudBlazor.Colors.Red.Default,
+            Tertiary = "#FF9900",
+            Surface = "#FFFDE7",
+            Dark = "#fefdf3"
+
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = MudBlazor.Colors.Blue.Lighten1
+        },
+
+        
+        
+
+        Typography = new Typography()
+        {
+            Default = new DefaultTypography()
+            {
+                FontFamily = new []{"Permanent Marker"}
+            },
+            H1 = new H3Typography()
+            {
+            FontFamily = new []{"Changa One"},
+            
+            
+            
+            
+            },
+         Subtitle1 = new     Subtitle1Typography()
+         {
+             FontFamily =  new []{"Changa One"},
+         },
+         Button = new ButtonTypography()
+         {
+             FontFamily =  new []{"Changa One","Passion One"},
+         },
+         
+         
+            
+        },
+        
+        
+        
+        
+    
+    };
+
+}

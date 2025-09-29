@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace backe.models.identiti;
+namespace bake.models.identiti;
 
 public class Opshen
 {

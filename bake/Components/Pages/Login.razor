@@ -1,0 +1,109 @@
+﻿@page "/login"
+@using Microsoft.AspNetCore.Http.HttpResults
+
+
+@rendermode InteractiveServer
+
+
+
+
+
+
+
+    
+<MudGrid Style="height: 400px">
+    <MudPaper  Width="400px" Height="280px"  Style="margin: auto; background-color: rgba(253,251,229,0.45)"  >
+        <MudText Align="Align.Center" >Sign in</MudText>
+        <MudItem  Style="margin: auto;width: 300px;
+height: 70px;
+font-size: 20px;">
+                
+            <MudCard >
+
+                <MudForm Spacing="5" Style="background-color:rgba(237,223,196,0.46)">
+                    @if (_inf)
+                    {
+                        
+                    <MudTextField InputType="InputType.Email" @bind-Value="_person.Email" Label="Email" Required="true" RequiredError="Email is not null"></MudTextField>
+                    <MudTextField InputType="InputType.Password" T="string" @bind-Value="_person.Password" Label="Password" Required="true" RequiredError="Password is not null"></MudTextField>
+                    }
+                    else
+                    {
+                        <MudText Color="Color.Error">Mistake in Email or Password</MudText>
+                        <MudTextField InputType="InputType.Email" @bind-Value="_person.Email" Label="Email" Required="true" RequiredError="Email is not null"></MudTextField>
+                        <MudTextField InputType="InputType.Password" T="string" @bind-Value="_person.Password" Label="Password" Required="true" RequiredError="Password is not null"></MudTextField>
+                    }
+                </MudForm>
+            </MudCard>
+            
+
+            <MudCardActions Style="margin: auto">
+
+                <MudButton Variant=" Variant.Filled" Style="margin: auto; height: 40px;width:140px " DropShadow="false" Color="Color.Primary"
+                           @onclick="@Log">
+                    
+                    Sing in
+                    
+                </MudButton>
+               
+
+
+
+            </MudCardActions>
+            
+                    <MudLink Style="margin-left: auto; font-family: 'Arial',sans-serif"  Color="Color.Secondary" Typo="Typo.overline"  Href="/Registr"> Create a new account</MudLink>
+                
+        </MudItem >
+    </MudPaper>
+</MudGrid>
+
+
+    
+
+
+
+     
+
+            
+     
+@code
+{
+    HttpClient _httpClientLog = null!;
+
+    bool _inf = true;
+    readonly Logperson _person = new Logperson();
+                                  
+    protected override Task OnInitializedAsync()
+    {
+        
+        _httpClientLog = ClientFactory.CreateClient();
+        
+        _httpClientLog.BaseAddress = new Uri(BaseUrl.base_url);
+        return Task.CompletedTask;
+    }
+    
+    async Task Log()
+    {
+        await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Login", _person );
+        await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Login", _person );
+        
+         
+        var httpResponseMessage = await _httpClientLog.GetAsync($"/Cheker/chek");
+
+        if (httpResponseMessage.IsSuccessStatusCode)
+        {
+           Navigation.NavigateTo("/home");
+        }
+        else
+        {
+            
+            _inf = false;
+        }
+
+        
+    }
+
+    
+
+    
+}

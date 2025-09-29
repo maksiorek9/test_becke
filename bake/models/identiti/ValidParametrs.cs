@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace backe.models.identiti;
+namespace bake.models.identiti;
 
 public static class ValidParametrs
 {

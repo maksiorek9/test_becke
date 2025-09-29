@@ -1,45 +1,45 @@
-﻿using backe.models.identiti;
+﻿using backe.models;
+using backe.models.identiti;
+using bake.models.identiti;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace backe.models;
+namespace bake.models;
 
-public class AuthModel(DbModel db , JWTModel jwtModel)
+public class AuthModel(DbModel db , JWTModel jwtModel, ChekPassword chekPassword, ChekEmail chekEmail)
 {
-    public void regist(RegPerson regPerson)
+    public async Task<string> regist(AuthPerson regPerson)
     {
+        if (await chekEmail.chek(regPerson.Email)== false)
+        {
+            return "fdfsdfs";
+        }
         Person person = new Person()
         {
             Id = Guid.Empty,
             Email = regPerson.Email,
             Name = regPerson.Name
         };
-        person.PasswordSh = new PasswordHasher<Person>()
-            .HashPassword(person, regPerson.Pasword);
-        db.Add(person);
-        db.SaveChanges();
+        person.Password = new PasswordHasher<Person>()
+            .HashPassword(person, regPerson.Password);
+       await db.AddAsync(person);
+       await db.SaveChangesAsync();
+            return jwtModel.getJWT(person);
+        
     }
 
-    public string login(string Email, string pasword)
+    public async  Task<string> login(Logperson pr)
     {
-        Person? person = db.work.FirstOrDefault(o => Email == o.Email);
+        Person? person = await  db.work.FirstOrDefaultAsync(o => pr.Email == o.Email);
         
         
         if (person== null)
         {
             //Console.WriteLine(jwtModel.getJWT(person));
-            return person.PasswordSh+ "" + person.Email;
-            throw new Exception("no person");
+            return "1";
+            
         }
-        var inf = new PasswordHasher<Person>()
-            .VerifyHashedPassword(person, person.PasswordSh, pasword);
-        if (inf == PasswordVerificationResult.Success)
-        {
-            return jwtModel.getJWT(person);
-        }
-        else
-        {
-            return "no";
-        }
+        
+        return chekPassword.chek(pr.Password,person) ? jwtModel.getJWT(person) : "no";
     }
 }

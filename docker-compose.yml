@@ -1,26 +1,36 @@
-﻿services:
+﻿version: '3.8'
+
+services:
   bake:
-    image: maksiorek9/test:latest
-    container_name: progect
-    build:
-      context: .
-      dockerfile: bake/Dockerfile
+    container_name: trd
+    image: maksiorek9/my_veb:latest
     depends_on:
-      dat:
-        condition: service_healthy    
+      wrr:
+        condition: service_healthy
     ports:
       - "8080:8080"
       - "8081:8081"
-  dat:
-    image: postgres
-    restart: always
-    environment: 
-        POSTGRES_PASSWORD: postgres
+    environment:
+      ConnectionStrings__DefaultConnection: "Host=wrr;Port=5432;Database=testt;Username=postgres;Password=postgres"
+    restart: unless-stopped
+
+  wrr:
+    image: postgres:latest
+    container_name: db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: testt
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready" ]
-      interval: 1s
+      test: ["CMD-SHELL", "pg_isready -U postgres -d testt"]
+      interval: 5s
       timeout: 5s
       retries: 10
     ports:
       - "5432:5432"
-  
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  db_data:

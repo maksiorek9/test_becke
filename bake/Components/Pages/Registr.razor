@@ -1,0 +1,173 @@
+﻿@page "/Registr"
+@using Microsoft.AspNetCore.Http.HttpResults
+@using Microsoft.DotNet.Scaffolding.Shared.Messaging
+@rendermode InteractiveServer
+@inject AuthPerson _AuthPerson
+
+
+
+
+
+    
+<MudGrid Style="height: 700px">
+    <MudPaper  Width="400px" Height="470px"  Style="margin: auto; background-color: rgba(253,251,229,0.45)"  >
+        <MudText Align="Align.Center" >Sign in</MudText>
+        <MudItem  Style="margin: auto;width: 300px;
+height: 70px;
+font-size: 20px;">
+                
+            <MudCard >
+
+                <MudForm Spacing="5" Style="background-color:rgba(237,223,196,0.46)">
+                    @if (_inf)
+                    {
+                        
+                        <MudTextField @bind-Value="_AuthPerson.Name" Label="Username" Required="true" RequiredError="Email is bad"></MudTextField>
+                        <MudTextField InputType="InputType.Email" @bind-Value="_AuthPerson.Email" Label="Email"
+                                      Validation="@(new Func<string, IEnumerable<string>>(EmailStrength))"
+                                      Required="true" RequiredError="Email is bad"></MudTextField>
+                        
+                        <MudTextField InputType="InputType.Password" T="string" @bind-Value="_AuthPerson.Password" Label="Password"
+                                      Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))"
+                                      Required="true" RequiredError="Password is bad"></MudTextField>
+    
+                        <MudTextField T="string"
+                                      Label="Password" HelperText="Repeat the password" InputType="InputType.Password"
+                                      Validation="@(new Func<string, string>(PasswordMatch))"/>
+                    }
+                    else
+                    {
+                        <MudText Color="Color.Error">The user already exists</MudText>
+                    <MudTextField @bind-Value="_AuthPerson.Name" Label="Username" Required="true" RequiredError="Email is bad"></MudTextField>
+                    <MudTextField InputType="InputType.Email" @bind-Value="_AuthPerson.Email" Label="Email"
+                                  Validation="@(new Func<string, IEnumerable<string>>(EmailStrength))"
+                                  Required="true" RequiredError="Email is bad"></MudTextField>
+
+                    <MudTextField InputType="InputType.Password" T="string" @bind-Value="_AuthPerson.Password" Label="Password"
+                                  Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))"
+                                  Required="true" RequiredError="Password is bad"></MudTextField>
+
+                    <MudTextField T="string"
+                                  Label="Password" HelperText="Repeat the password" InputType="InputType.Password"
+                                  Validation="@(new Func<string, string>(PasswordMatch))"/>
+                    }
+
+
+
+
+                </MudForm>
+            </MudCard>
+            
+
+            <MudCardActions Style="margin: auto">
+
+                <MudButton Variant=" Variant.Filled" Style="margin: auto; height: 40px;width:140px " DropShadow="false" Color="Color.Primary" @onclick="Chek">Create</MudButton>
+
+
+
+            </MudCardActions>
+            
+                
+                    <MudLink Style="margin-left: auto; font-family: 'Arial',sans-serif"  Color="Color.Secondary" Typo="Typo.overline"  Href="/login"> Log in</MudLink>
+        </MudItem >
+    </MudPaper>
+</MudGrid>
+
+
+    
+
+
+
+
+            
+     
+@code
+{
+    HttpClient _httpClientLog = null!;
+    bool _inf = true;
+    
+    string pattern = @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                     @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$";
+
+    
+                                  
+    protected override async Task OnInitializedAsync()
+    {
+        _httpClientLog = ClientFactory.CreateClient();
+        
+        _httpClientLog.BaseAddress = new Uri(BaseUrl.base_url);
+        
+    }
+
+    async Task Chek()
+    {
+
+        //добавь инфу о пароле
+         
+        
+            await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Registr",  _AuthPerson );
+            //await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Registr",  _AuthPerson );
+            
+            var j = await _httpClientLog.GetAsync($"/Cheker/chek");
+
+        if (j.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/home");
+            
+            await _httpClientLog.PostAsJsonAsync($"/AutheControlers/test", _AuthPerson);
+            await _httpClientLog.GetAsync("Cheker/log");
+
+        }
+         else
+        {
+            this._inf = false;
+            await _httpClientLog.GetAsync("Cheker/log");
+        }
+        
+    }
+    
+    
+   
+    
+    bool _success;
+    string[] _errors = { };
+    
+    MudForm _form;
+
+    private IEnumerable<string> EmailStrength(string email)
+    {
+        if (Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase))
+        {
+            yield break;
+        }
+        else
+        {
+            yield return "Non-portico email";
+        }
+    }
+    
+    
+    private IEnumerable<string> PasswordStrength(string pw)
+    {
+        if (string.IsNullOrWhiteSpace(pw))
+        {
+            yield return "Password is required!";
+            yield break;
+        }
+        if (pw.Length < 8)
+            yield return "Password must be at least of length 8";
+        if (!Regex.IsMatch(pw, @"[A-Z]"))
+            yield return "Password must contain at least one capital letter";
+        if (!Regex.IsMatch(pw, @"[a-z]"))
+            yield return "Password must contain at least one lowercase letter";
+        if (!Regex.IsMatch(pw, @"[0-9]"))
+            yield return "Password must contain at least one digit";
+    }
+
+    private string PasswordMatch(string arg)
+    {
+        if (_AuthPerson.Password != arg)
+            return "Passwords don't match";
+        return null;
+    }
+}

@@ -1,95 +1,269 @@
-﻿@page "/app"
-@using System.ComponentModel.DataAnnotations
-@using backe.models.identiti
+﻿@page "/Home"
+@using Microsoft.CodeAnalysis.CSharp.Syntax
+@using bake.Components.Layout
+@using Microsoft.Extensions.Options
+@inject cookie Cookie
+@inject IDialogService DialogService
+@inject IHttpContextAccessor HttpContextAccessor
 @rendermode InteractiveServer
-@inject NavigationManager Navigation
-@inject IHttpClientFactory ClientFactory
 
-<div>
-    <p>
-        Имя:<br />
-        <input @bind-value="reg.Name" />
-    </p>
-    <p>
-        Имя:<br />
-        <input @bind-value="reg.Email" />
-    </p>
-    <p>
-        Пароль:<br />
-        <input @bind-value="reg.Pasword" />
-    </p>
-    <p>
-        <button @onclick="Submit">Сохранить</button>
-    </p>
-</div>
+
+
+
+<MudDrawer @bind-Open="@Cookie._open" Anchor="@Anchor.Start" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="@_overlayAutoClose">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6" Class="@($"d-flex justify-center align-center {"cursor-default"}")">Baking</MudText>
+        </MudDrawerHeader>
+
+
+        <MudPaper Style="background-color: rgba(253,251,229,0.37)">
+
+            <MudText Typo="Typo.subtitle1" Class="@($"d-flex justify-center align-center {"cursor-default"}")">Chocolate Chip Cookies </MudText>
+
+            <img Width="30%" Style="max-width: 1050px; " Src="image/cookieShpe.jpg" alt=""/>
+            <MudText Class="@($"d-flex justify-center align-center {"cursor-default"}")">12pcs in bocks</MudText>
+            <MudNumericField @bind-Value="Cookie.co" Variant="Variant.Filled" Min="0"/>
+        </MudPaper>
+
+
+        <MudPaper Style="background-color: rgba(253,251,229,0.37)">
+
+            <MudText Typo="Typo.subtitle1" Class="@($"d-flex justify-center align-center {"cursor-default"}")">Chocolate Chip Cookies </MudText>
+
+            <img Width="30%" Style="max-width: 1050px; " Src="image/cakeShpe.jpg" alt=""/>
+            <MudText Class="@($"d-flex justify-center align-center {"cursor-default"}")">6pcs in bocks</MudText>
+            <MudNumericField @bind-Value="Cookie.cake" Variant="Variant.Filled" Min="0"/>
+        </MudPaper>
+        <MudButton DropShadow="true" Color="Color.Default" Variant="Variant.Filled" @onclick="OpenDialogAsync" Style="top: 40%">Pay</MudButton>
+
+
+    </MudDrawer>
+
+
+
 
 <div>
     
-    <p>
-        Имя:<br />
-        <input @bind-value="Log.Email" />
-    </p>
-    <p>
-        Пароль:<br />
-        <input @bind-value="Log.Pasword" />
-    </p>
-    <p>
-        <button @onclick="Chek">войти</button>
-    </p>
-    
-</div>
-<div>
-    <p>
-        <button @onclick="Val">проверка</button>
+<MudPaper Height="100%" Square="true" Style="background-color: rgba(253,251,229,0.45);">
+
         
-    </p>
+    <img Width="48%" height="auto" style="max-width: 430px; " align="right" Src="image\cookie.png" alt=""/>
+
+    <MudItem>
+        
+        <br/>
+        <MudText Typo="Typo.h1" Style="position: relative;
+         left: min(50%);
+         
+transform: translate(-50%, 0);
+  font-size: 40px " Class="@($" {"cursor-default"}")">
+            Incredibly fussy
+            <br/>
+            cookies and cupcakes
+        </MudText>
+        <MudText Style="margin: auto; right: 60px;
+position: relative;
+left: 65%;
+transform: translate(-50%, 0);" Class="@($" {"cursor-default"}")">according to the AI version<br><br><br><br><br><br><br/>
+        </MudText>
+    </MudItem>
+</MudPaper>
 </div>
-<h1>@Inf</h1>
+<br>
+
+<MudGrid Justify="Justify.Center">
+    
+    <MudText Typo="Typo.h1" Style="margin: auto;   " Align="Align.Center" Class="@($"d-flex justify-center align-center {"cursor-default"}")"> Best Cookie</MudText>
+    
+    <MudItem xs="12">
+        
+        <MudGrid Justify="Justify.Center">
+            
+            <MudItem xs="5">
+                
+                <MudPaper Style="background-color: rgba(253,251,229,0.37)" Class="d-flex flex-column align-center justify-center mud-width-full py-8">
+                    
+                    <MudText Typo="Typo.h5"  Class="@($"d-flex justify-center align-center {"cursor-default"}")">Chocolate Chip Cookies </MudText>
+
+                    <img  Width="50%"  Src="image/cookieShpe.jpg" alt=""/>
+                    
+                    <button  class="custom-button"  @onclick="()=>Cook()" >Buy</button>
+                    
+                    <MudText Style="font-size: 30px;" Class="@($"d-flex justify-center align-center {"cursor-default"}")">12pcs in bocks </MudText>
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="5">
+                <MudPaper Style="background-color: rgba(253,251,229,0.37)" Class="d-flex flex-column align-center justify-center mud-width-full py-8">
+                    <MudText Typo="Typo.h5" Class="@($"d-flex justify-center align-center {"cursor-default"}")"> Lemon muffins </MudText>
+                    <img  ObjectPosition="ObjectPosition.Bottom" style="max-width: 950px" Width="50%"  Src="image/cakeShpe.jpg"/>
+                    <Button  @onclick="()=>Caake()"  class="custom-button" >Buy</Button>
+                    <MudText  Style="font-size: 30px;" Class="@($"d-flex justify-center align-center {"cursor-default"}")">6pcs in bocks</MudText>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+        
+    </MudItem>
+</MudGrid>
+
+
+
+
+<br/>
+
+
+    <MudPaper Style="background-color: rgb(137, 72, 23)">
+        <MudText Color="Color.Dark" Class="@($"d-flex {"cursor-default"}")">
+            
+    This is a preview site that is not commercial and is used only to pre-show what the developer can<br/>Where do I work and how can I contact you<br/><br/>Email<br/>
+        </MudText>  
+    <MudItem>
+        <MudText Color="Color.Dark" Style="font-family: BreakfastOnTheBeachPersonalUse, sans-serif" >ishkovvadim2006@gmail.com</MudText><br/>
+    </MudItem>
+        <MudItem>
+            <MudText Color="Color.Dark"Class="@($"d-flex  {"cursor-default"}")">
+                world
+                </MudText>
+                <br/>
+            <MudButton Variant="Variant.Outlined"    Color="Color.Dark" Href="https://www.upwork.com/freelancers/~013e516ad24e7bd921"> Upwork</MudButton>
+            <MudButton Variant="Variant.Outlined" Color="Color.Dark" Href="https://www.fiverr.com/vadim_ishkov/buying?source=avatar_menu_profile"> Fiverr</MudButton>
+        </MudItem>
+        <br/>
+        <MudText Color="Color.Dark" Class="@($"d-flex  {"cursor-default"}")">
+        Russia
+        </MudText>
+    <br/>
+    <MudButton Variant="Variant.Outlined" Color="Color.Dark" Href="https://kwork.ru/user/vadimiskovrus2006"> Kwork</MudButton>
+    </MudPaper>
+
+
+<MudDialogProvider
+    FullWidth="true"
+    MaxWidth="MaxWidth.Small"
+    CloseButton="true"
+    BackdropClick="true"
+    NoHeader="true"
+    Position="DialogPosition.Center"
+    CloseOnEscapeKey="true"
+    BackgroundClass="my-custom-class"/>
+
+<style>        .custom-button {
+        background-color: rgba(237, 223, 196, 0); /* Цвет фона кнопки */
+        color: #000000; /* Цвет текста */
+        border: 2px solid transparent; /* Прозрачная обводка по умолчанию */
+        padding: 10px 20px; /* Отступы */
+        font-size: 33px; /* Размер шрифта */
+        font-family: Changa One, sans-serif;
+        cursor: pointer; /* Курсор при наведении */
+        transition: border 0.3s ease, background-color 0.3s ease; /* Плавный переход для обводки и фона */
+        border-radius: 5px; /* Закругленные углы */
+    }
+
+    .custom-button:hover {
+        border: 2px solid rgba(0, 0, 0, 0.5); /* Затемненная обводка при наведении */
+        background-color: rgba(253, 251, 229, 0.45); /* Изменение цвета фона при наведении */
+    }
+</style>
+
 @code {
-    HttpResponseMessage inf;
-    string Inf;
-    RegPerson reg = new RegPerson();
+
     
-    HttpClient httpClientReg = null!;
-    HttpClient httpClientLog = null!;
+    private bool isMobileDevice;
+
+    protected override void OnInitialized()
+    {
+        var userAgent = HttpContextAccessor.HttpContext.Request.Headers["User-Agent"].ToString();
+        isMobileDevice = DeviceDetector.IsMobile(userAgent);
+    }
     
-    RegPerson Log = new RegPerson();
+    
+    
     
 
+    private bool isFormVisible = false;
+
+    private FormModel formModel = new FormModel();
+    
+    
+   
+
+    private Task OpenDialogAsync()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+
+        return DialogService.ShowAsync<Dialog>("Simple Dialog", options);
+    }
+
+    private void Cook( )
+    {
+        Cookie._open = true;
+        Cookie.co++;
+    }
+    private void Caake( )
+    {
+        
+        Cookie.cake++;
+        Cookie._open = true;
+    }
+    private void HideForm()
+    {
+        isFormVisible = false;
+    }
+
+    private void HandleValidSubmit()
+    {
+        // Логика обработки отправки формы
+        Console.WriteLine($"Имя: {formModel.Name}, Сообщение: {formModel.Message}");
+        isFormVisible = false; // Скрыть форму после отправки
+    }
+
+    public class FormModel
+    {
+        public string Name { get; set; }
+        public string Message { get; set; }
+    }
+    
+    
+    
+    
+    
+    
+    
+    HttpClient _httpClientHome = new HttpClient();
     protected override async Task OnInitializedAsync()
     {
-        httpClientReg = ClientFactory.CreateClient();
         
-        httpClientReg.BaseAddress = new Uri("http://localhost:8080");
         
+        _httpClientHome = ClientFactory.CreateClient();
+        
+        _httpClientHome.BaseAddress = new Uri(BaseUrl.base_url);
+        
+    }
+    
+    public bool _open;
+   
+
+    private void ToggleDrawer()
+    {
+        
+        _open = true;
     }
 
 
-    
+    private  bool _overlayAutoClose = true;
 
-     async Task Submit()
+    private  void OpenDrawer()
     {
-        await httpClientReg.PostAsJsonAsync($"/AutheControlers/Registr", reg);
-      
+        Cookie._open = true;
        
     }
-
-    async Task Chek()
-    {
-        await httpClientReg.PostAsJsonAsync($"/AutheControlers/Login", Log );
-    }
     
-    async Task Val()
-    {
-        var inf = await httpClientReg.GetAsync($"/Good_wordControler");
-        if (inf.IsSuccessStatusCode)
-        {
-            Inf = "good";
-        }
-        else
-        {
-            Inf = "bad";
-        }
-    }
+    
+    
+    
+    
+    
     
 }
+
+
+

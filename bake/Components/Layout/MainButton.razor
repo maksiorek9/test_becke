@@ -1,0 +1,17 @@
+﻿@rendermode InteractiveServer
+<button  @onclick="Navi"  Style=" position: relative;
+left: 43%;
+transform: translate(-50%, 0);
+font-size: 40px;
+font-family: Permanent Marker, sans-serif;
+">Cookie </button>
+
+@code
+{
+    void Navi()
+    {
+        Navigation.NavigateTo(BaseUrl.base_url+"/Home");
+        
+    }
+    
+}

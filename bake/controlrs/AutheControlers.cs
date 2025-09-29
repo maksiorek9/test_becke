@@ -1,26 +1,41 @@
 ﻿using backe.models;
 using backe.models.identiti;
+using bake.models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace backe.controlrs;
+namespace bake.controlrs;
 
 
 [ApiController]
-[Route("[controller]")]
-public class AutheControlers(AuthModel authModel): ControllerBase
+[Microsoft.AspNetCore.Mvc.Route("[controller]")]
+public class AutheControlers(AuthModel authModel, EmailVer emailVer): ControllerBase
 {
+    
+
     [HttpPost("Registr")]
-    public IActionResult reg([FromBody] RegPerson person)
+    public async Task<IActionResult> reg([FromBody] AuthPerson person)
     {
-        authModel.regist(person);
-        return Ok("ww");
+        var toke = await authModel.regist(person);
+        
+         HttpContext.Response.Cookies.Append("berr",toke);
+         return Ok(toke);
     }
     
     [HttpPost("Login")]
-    public IActionResult Log([FromBody] RegPerson person)
+    public async Task<IActionResult> Log([FromBody] Logperson person)
     {
-        var toke = authModel.login(person.Email, person.Pasword);
-        HttpContext.Response.Cookies.Append("berr",toke);
+        var toke = await  authModel.login(person);
+        
+         HttpContext.Response.Cookies.Append("berr",toke);
+         Console.WriteLine(toke);
         return Ok(toke);
+    }
+    [HttpPost("test")]
+    public async Task<IActionResult> Leg([FromBody] AuthPerson person)
+    {
+        await emailVer.SandnEmailAsync(person.Email, person.Password, person.Name);
+        
+        
+        return Ok("4343");
     }
 }

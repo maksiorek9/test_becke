@@ -1,0 +1,25 @@
+﻿@rendermode InteractiveServer
+<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ToggleDrawer())">Toggle drawer</MudButton>
+
+<MudDrawer @bind-Open="@_open" Overlay="false" Elevation="1" Variant="@DrawerVariant.Temporary">
+    <MudDrawerHeader>
+        <MudText Typo="Typo.h6">My App</MudText>
+    </MudDrawerHeader>
+    <MudNavMenu>
+        @foreach (var i in nav)
+        {
+            
+            <MudNavLink Match="NavLinkMatch.All">Store</MudNavLink>
+        }
+
+    </MudNavMenu>
+</MudDrawer>
+@code{ 
+    private bool _open;
+
+    List<string> nav = new List<string>() { "Store","Lib"};
+    private void ToggleDrawer()
+    {
+        _open = !_open;
+    }
+}

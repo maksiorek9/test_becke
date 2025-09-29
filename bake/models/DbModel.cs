@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using backe.models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace backe.models;
+namespace bake.models;
 
 public class DbModel: IdentityDbContext
 {
@@ -9,6 +10,6 @@ public class DbModel: IdentityDbContext
 
     public DbModel(DbContextOptions<DbModel> options) : base(options)
     {
-        Database.EnsureCreated();
+        Database.EnsureCreatedAsync();
     }
 }

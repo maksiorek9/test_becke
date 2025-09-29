@@ -1,0 +1,64 @@
+﻿@page "/Ver"
+@using Microsoft.Win32
+@using bake.Components.Pages
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@using System.Net
+@using System.Runtime.InteropServices
+@using MudBlazor.Utilities
+@rendermode InteractiveServer
+@inject AuthPerson _AuthPerson
+
+
+
+
+<MudGrid Style="height: 400px">
+    <MudPaper  Width="280px" Height="100px"  Style="margin: auto; background-color: rgba(253,251,229,0.45)"  >
+        
+        
+                
+            
+            
+
+            <MudCardActions Style="margin: auto" >
+
+                <MudButton Variant=" Variant.Filled" FullWidth="true"  Style="margin: auto; height: 40px;width:140px; top: 20px " DropShadow="false" Color="Color.Primary"
+                           @onclick="@Chek">
+                    
+                    Sing in
+                    
+                </MudButton>
+               
+
+
+
+            </MudCardActions>
+            
+            
+                
+       
+    </MudPaper>
+</MudGrid>
+
+@code
+{
+    HttpClient _httpClientLog = null!;
+    
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _httpClientLog = ClientFactory.CreateClient();
+        
+        _httpClientLog.BaseAddress = new Uri(BaseUrl.base_url);
+        
+    }
+    async Task Chek()
+    {
+      
+        await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Registr",  _AuthPerson );
+        Navigation.NavigateTo("/home");
+        
+        
+    }
+}
+<h6>Here's your <br>password{pas} <br/>name{name}</h6>
