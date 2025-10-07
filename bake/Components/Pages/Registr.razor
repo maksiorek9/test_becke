@@ -28,6 +28,7 @@ font-size: 20px;">
                                       Required="true" RequiredError="Email is bad"></MudTextField>
                         
                         <MudTextField InputType="InputType.Password" T="string" @bind-Value="_AuthPerson.Password" Label="Password"
+                                      HelperText="8 characters with A-z & 0-9"
                                       Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))"
                                       Required="true" RequiredError="Password is bad"></MudTextField>
     
@@ -37,6 +38,7 @@ font-size: 20px;">
                     }
                     else
                     {
+                        
                         <MudText Color="Color.Error">The user already exists</MudText>
                     <MudTextField @bind-Value="_AuthPerson.Name" Label="Username" Required="true" RequiredError="Email is bad"></MudTextField>
                     <MudTextField InputType="InputType.Email" @bind-Value="_AuthPerson.Email" Label="Email"
@@ -44,6 +46,7 @@ font-size: 20px;">
                                   Required="true" RequiredError="Email is bad"></MudTextField>
 
                     <MudTextField InputType="InputType.Password" T="string" @bind-Value="_AuthPerson.Password" Label="Password"
+                                  HelperText="A-z & 0-9"
                                   Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))"
                                   Required="true" RequiredError="Password is bad"></MudTextField>
 
