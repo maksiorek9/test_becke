@@ -20,59 +20,55 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = bake
 build_property.RootNamespace = bake
-build_property.ProjectDir = D:\Progect\bake\bake\
+build_property.ProjectDir = C:\Users\Пользователь\RiderProjects\test_becke\bake\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Progect\bake\bake
+build_property.MSBuildProjectDirectory = C:\Users\Пользователь\RiderProjects\test_becke\bake
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Progect/bake/bake/Components/App.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Layout/Drawer.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRHJhd2VyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Progect/bake/bake/Components/Layout/MainButton.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Layout/MainButton.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Pages/Dialog.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Pages/Dialog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEaWFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Pages/Home.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Pages/Login.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Pages/Registr.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Pages/Registr.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3RyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Pages/VerifaiEmail.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Pages/VerifaiEmail.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWZXJpZmFpRW1haWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Routes.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/_Imports.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Progect/bake/bake/Components/Layout/MainLayout.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-pckysniqu5
 
-[D:/Progect/bake/bake/Components/Layout/NavManu.razor]
+[C:/Users/Пользователь/RiderProjects/test_becke/bake/Components/Layout/NavManu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWFudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-k3xamrfb09

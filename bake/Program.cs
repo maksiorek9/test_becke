@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using backe.models;
 using backe.models.identiti;
 using backe.models.Repositori;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tIGjzCGfCBSST8xRAqmqg0ONxFIk1FHd2q3lNiC7+oE=",
+  "Hash": "fSsm8XvrkY9zdN9n9QZjzR/iR0uo0+dqSQrIorcKWmE=",
   "Source": "bake",
   "BasePath": "_content/bake",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "bake\\wwwroot",
       "Source": "bake",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Vadim\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.css",
+      "Identity": "C:\\Users\\Пользователь\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.css",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Vadim\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Vadim\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.css"
+      "OriginalItemSpec": "C:\\Users\\Пользователь\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.css"
     },
     {
-      "Identity": "C:\\Users\\Vadim\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.js",
+      "Identity": "C:\\Users\\Пользователь\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.js",
       "SourceId": "MudBlazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Vadim\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\",
       "BasePath": "_content/MudBlazor",
       "RelativePath": "MudBlazor.min.js",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Vadim\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.js"
+      "OriginalItemSpec": "C:\\Users\\Пользователь\\.nuget\\packages\\mudblazor\\8.11.0\\staticwebassets\\MudBlazor.min.js"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\obj\\Debug\\net8.0\\scopedcss\\bundle\\bake.styles.css",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\obj\\Debug\\net8.0\\scopedcss\\bundle\\bake.styles.css",
       "SourceId": "bake",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/bake",
       "RelativePath": "bake.styles.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Progect\\bake\\bake\\obj\\Debug\\net8.0\\scopedcss\\bundle\\bake.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\obj\\Debug\\net8.0\\scopedcss\\bundle\\bake.styles.css"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\bake.bundle.scp.css",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\bake.bundle.scp.css",
       "SourceId": "bake",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/bake",
       "RelativePath": "bake.bundle.scp.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Progect\\bake\\bake\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\bake.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\bake.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\app.css",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\BreakfastOnTheBeachPersonalUse.ttf",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\BreakfastOnTheBeachPersonalUse.ttf",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/BreakfastOnTheBeachPersonalUse.ttf",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\BreakfastOnTheBeachPersonalUse.ttf"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\GreatLeaderInverse.ttf",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\GreatLeaderInverse.ttf",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/GreatLeaderInverse.ttf",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\GreatLeaderInverse.ttf"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\lavash.ttf",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\lavash.ttf",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/lavash.ttf",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\lavash.ttf"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\Metamorphous.ttf",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\Metamorphous.ttf",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/Metamorphous.ttf",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Metamorphous.ttf"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\Minecraft_1.1.ttf",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\Minecraft_1.1.ttf",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/Minecraft_1.1.ttf",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Minecraft_1.1.ttf"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\Minecraft_1.1.woff",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\Minecraft_1.1.woff",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/Minecraft_1.1.woff",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Minecraft_1.1.woff"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\fonts\\Pusia Bold.otf",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\fonts\\Pusia Bold.otf",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "fonts/Pusia Bold.otf",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Pusia Bold.otf"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\cake.png",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\image\\cake.png",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "image/cake.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\image\\cake.png"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\cakeShpe.jpg",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\image\\cakeShpe.jpg",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "image/cakeShpe.jpg",
       "AssetKind": "All",
@@ -283,29 +283,10 @@
       "OriginalItemSpec": "wwwroot\\image\\cakeShpe.jpg"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\Cakewee.png",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\image\\cookie.png",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
-      "BasePath": "_content/bake",
-      "RelativePath": "image/Cakewee.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\Cakewee.png"
-    },
-    {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\cookie.png",
-      "SourceId": "bake",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "image/cookie.png",
       "AssetKind": "All",
@@ -321,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\image\\cookie.png"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\cookieShpe.jpg",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\image\\cookieShpe.jpg",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "image/cookieShpe.jpg",
       "AssetKind": "All",
@@ -340,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\image\\cookieShpe.jpg"
     },
     {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\favicon-32x32.png",
+      "Identity": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\image\\favicon-32x32.png",
       "SourceId": "bake",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Пользователь\\RiderProjects\\test_becke\\bake\\wwwroot\\",
       "BasePath": "_content/bake",
       "RelativePath": "image/favicon-32x32.png",
       "AssetKind": "All",
@@ -357,25 +338,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\favicon-32x32.png"
-    },
-    {
-      "Identity": "D:\\Progect\\bake\\bake\\wwwroot\\image\\pngtree-yellow-cookie-illustration-png-image_4541138-325545265.png",
-      "SourceId": "bake",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Progect\\bake\\bake\\wwwroot\\",
-      "BasePath": "_content/bake",
-      "RelativePath": "image/pngtree-yellow-cookie-illustration-png-image_4541138-325545265.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\image\\pngtree-yellow-cookie-illustration-png-image_4541138-325545265.png"
     }
   ]
 }

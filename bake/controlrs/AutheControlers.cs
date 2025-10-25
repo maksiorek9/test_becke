@@ -39,3 +39,6 @@ public class AutheControlers(AuthModel authModel, EmailVer emailVer): Controller
         return Ok("4343");
     }
 }
+
+
+

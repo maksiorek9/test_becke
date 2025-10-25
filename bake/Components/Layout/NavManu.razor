@@ -1,25 +1,69 @@
 ﻿@rendermode InteractiveServer
-<MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => ToggleDrawer())">Toggle drawer</MudButton>
+@using Microsoft.CodeAnalysis.CSharp.Syntax
+@using bake.Components.Layout
+@using Microsoft.Extensions.Options
+@inject cookie Cookie
+@inject IDialogService DialogService
+@inject IHttpContextAccessor HttpContextAccessor
 
-<MudDrawer @bind-Open="@_open" Overlay="false" Elevation="1" Variant="@DrawerVariant.Temporary">
+
+<MudIconButton  Icon="@Icons.Material.TwoTone.Cookie"  Size="Size.Large"  OnClick="@(() => ToggleDrawer())"/>
+
+<MudDrawer @bind-Open="@Cookie._open" Anchor="@Anchor.Start" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="@_overlayAutoClose">
     <MudDrawerHeader>
-        <MudText Typo="Typo.h6">My App</MudText>
+        <MudText Typo="Typo.h6" Class="@($"d-flex justify-center align-center {"cursor-default"}")">Baking</MudText>
     </MudDrawerHeader>
-    <MudNavMenu>
-        @foreach (var i in nav)
-        {
-            
-            <MudNavLink Match="NavLinkMatch.All">Store</MudNavLink>
-        }
 
-    </MudNavMenu>
+
+    <MudPaper Style="background-color: rgba(253,251,229,0.37)">
+
+        <MudText Typo="Typo.subtitle1" Class="@($"d-flex justify-center align-center {"cursor-default"}")">Chocolate Chip Cookies </MudText>
+
+        <img Width="30%" Style="max-width: 1050px; " Src="image/cookieShpe.jpg" alt=""/>
+        <MudText Class="@($"d-flex justify-center align-center {"cursor-default"}")">12pcs in bocks</MudText>
+        <MudNumericField @bind-Value="Cookie.co" Variant="Variant.Filled" Min="0"/>
+    </MudPaper>
+
+
+    <MudPaper Style="background-color: rgba(253,251,229,0.37)">
+
+        <MudText Typo="Typo.subtitle1" Class="@($"d-flex justify-center align-center {"cursor-default"}")">Chocolate Chip Cookies </MudText>
+
+        <img Width="30%" Style="max-width: 1050px; " Src="image/cakeShpe.jpg" alt=""/>
+        <MudText Class="@($"d-flex justify-center align-center {"cursor-default"}")">6pcs in bocks</MudText>
+        <MudNumericField @bind-Value="Cookie.cake" Variant="Variant.Filled" Min="0"/>
+    </MudPaper>
+    <MudButton DropShadow="true" Color="Color.Default" Variant="Variant.Filled" @onclick="OpenDialogAsync" Style="top: 40%">Pay</MudButton>
+
+
 </MudDrawer>
 @code{ 
-    private bool _open;
+    
+    private void Cook( )
+    {
+        Cookie._open = true;
+        Cookie.co++;
+    }
+    private void Caake( )
+    {
+        
+        Cookie.cake++;
+        Cookie._open = true;
+    }
+    private Task OpenDialogAsync()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
 
-    List<string> nav = new List<string>() { "Store","Lib"};
+        return DialogService.ShowAsync<Dialog>("Simple Dialog", options);
+    }
+    private  bool _overlayAutoClose = true;
+
+   
+
     private void ToggleDrawer()
     {
-        _open = !_open;
+
+        Cookie._open = true;
     }
+
 }
