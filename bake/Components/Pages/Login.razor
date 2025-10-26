@@ -86,7 +86,7 @@ font-size: 20px;">
     {
         await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Login", _person );
         await _httpClientLog.PostAsJsonAsync($"/AutheControlers/Login", _person );
-        
+        Thread.Sleep(30);
          
         var httpResponseMessage = await _httpClientLog.GetAsync($"/Cheker/chek");
 
